@@ -23,17 +23,17 @@ __decorate([
     (0, type_graphql_1.Field)(() => type_graphql_1.ID, {
         description: "Address"
     }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], WalletOutput.prototype, "address", void 0);
 __decorate([
-    (0, type_graphql_1.Field)(() => type_graphql_1.ID, {
-        description: "cpf"
+    (0, type_graphql_1.Field)({
+        description: "cpf do individuo"
     }),
     __metadata("design:type", String)
 ], WalletOutput.prototype, "cpf", void 0);
 __decorate([
-    (0, type_graphql_1.Field)(() => type_graphql_1.ID, {
-        description: "aniversario"
+    (0, type_graphql_1.Field)({
+        description: "aniver do individuo"
     }),
     __metadata("design:type", String)
 ], WalletOutput.prototype, "birthdate", void 0);

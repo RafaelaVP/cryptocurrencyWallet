@@ -9,12 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateWalletInput = void 0;
+exports.UpdateWalletInput = exports.CreateWalletInput = void 0;
+const class_validator_1 = require("class-validator");
 const type_graphql_1 = require("type-graphql");
 let CreateWalletInput = class CreateWalletInput {
 };
 __decorate([
     (0, type_graphql_1.Field)(),
+    (0, class_validator_1.MinLength)(7),
     __metadata("design:type", String)
 ], CreateWalletInput.prototype, "name", void 0);
 __decorate([
@@ -31,3 +33,13 @@ CreateWalletInput = __decorate([
     (0, type_graphql_1.InputType)()
 ], CreateWalletInput);
 exports.CreateWalletInput = CreateWalletInput;
+let UpdateWalletInput = class UpdateWalletInput extends CreateWalletInput {
+};
+__decorate([
+    (0, type_graphql_1.Field)(() => type_graphql_1.ID),
+    __metadata("design:type", Number)
+], UpdateWalletInput.prototype, "address", void 0);
+UpdateWalletInput = __decorate([
+    (0, type_graphql_1.InputType)()
+], UpdateWalletInput);
+exports.UpdateWalletInput = UpdateWalletInput;
