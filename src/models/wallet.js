@@ -3,10 +3,11 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   const Wallet = sequelize.define('wallet', {
     address: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.UUID,
        autoIncrement: true,
        allowNull: false,
-       primaryKey:true
+       primaryKey:true,
+       defaultValue: Sequelize.UUIDV4
   },
    name: {
       type: Sequelize.STRING,

@@ -4,9 +4,9 @@ module.exports = {
     await queryInterface.createTable('Wallets', {
       address: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        default: Sequelize.UUID
       },
       name: {
         type: Sequelize.STRING
