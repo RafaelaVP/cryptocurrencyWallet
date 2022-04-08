@@ -13,16 +13,16 @@ export class WalletOutput {
     @Field(()=> ID, {
         description: "Address"
     })
-    address: number
+    address: string
 
-    @Field(()=> ID, {
-        description: "cpf"
+    @Field({
+        description: "cpf do individuo"
     })
     cpf: string
 
-    @Field(()=> ID, {
-        description: "aniversario"
+    @Field({
+        description: "aniver do individuo"
     })
-    birthdate: string
+    birthdate:string
     
 }
