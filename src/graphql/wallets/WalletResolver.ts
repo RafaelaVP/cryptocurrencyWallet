@@ -13,12 +13,8 @@ export class Wallet {
        @Arg("data", () => CreateWalletInput, {description: "dados"})
        data: CreateWalletInput
    ) {
-       try {
            const result = await createWallet(data);
-           return result;
-       } catch (error) {
-           console.log(error)
-       }
+           return result;  
    }
    @Mutation(()=> Boolean, {
        description: "Update wallet"
