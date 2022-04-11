@@ -19,13 +19,8 @@ const WalletInput_1 = require("./WalletInput");
 const WalletOutput_1 = require("./WalletOutput");
 let Wallet = class Wallet {
     async createWallet(data) {
-        try {
-            const result = await (0, walletService_1.createWallet)(data);
-            return result;
-        }
-        catch (error) {
-            console.log(error);
-        }
+        const result = await (0, walletService_1.createWallet)(data);
+        return result;
     }
     async updateWallet(data) {
         try {

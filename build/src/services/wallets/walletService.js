@@ -1,15 +1,18 @@
 "use strict";
-const { ApolloError } = require('apollo-server-express');
 const models = require('../../models');
 const validCpf = require('../../utils/cpfValid');
 const validAge = require('../../utils/age');
+const Errors = require('../../errors/Errors');
+const errors = Errors();
 const createWallet = async (data) => {
     const isCPFinvalid = validCpf.valid(data.cpf);
-    if (isCPFinvalid)
-        throw new ApolloError("cpf invalido");
+    if (isCPFinvalid) {
+        const error = errors.CPF_IS_INVALID();
+        throw error;
+    }
     const minorAge = validAge.calculate(data.birthdate);
     if (minorAge)
-        throw new ApolloError("menor de idade");
+        throw errors.IS_UNDERAGE();
     const result = await models.wallet.create(data);
     return result;
 };
