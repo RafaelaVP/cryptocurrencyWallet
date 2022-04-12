@@ -1,4 +1,5 @@
 import { Field, ID, ObjectType } from "type-graphql";
+import { CoinOutput } from "../coins/CoinOutput";
 
 
 @ObjectType({
@@ -25,4 +26,9 @@ export class WalletOutput {
     })
     birthdate:string
     
+    @Field(() => [CoinOutput], {
+        description: "coins"
+    })
+    coins: []
+
 }

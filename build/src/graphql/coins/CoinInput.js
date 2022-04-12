@@ -9,44 +9,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WalletOutput = void 0;
+exports.UpdateCoinInput = exports.CreateCoinInput = void 0;
 const type_graphql_1 = require("type-graphql");
-const CoinOutput_1 = require("../coins/CoinOutput");
-let WalletOutput = class WalletOutput {
+let CreateCoinInput = class CreateCoinInput {
 };
 __decorate([
-    (0, type_graphql_1.Field)({
-        description: "nome do individuo"
+    (0, type_graphql_1.Field)(),
+    __metadata("design:type", String)
+], CreateCoinInput.prototype, "fullname", void 0);
+__decorate([
+    (0, type_graphql_1.Field)(),
+    __metadata("design:type", String)
+], CreateCoinInput.prototype, "coin", void 0);
+__decorate([
+    (0, type_graphql_1.Field)(() => Number, {
+        description: "kodi"
+    }),
+    __metadata("design:type", Number)
+], CreateCoinInput.prototype, "amont", void 0);
+__decorate([
+    (0, type_graphql_1.Field)(() => String, {
+        description: "kodi"
     }),
     __metadata("design:type", String)
-], WalletOutput.prototype, "name", void 0);
+], CreateCoinInput.prototype, "walletAddress", void 0);
+CreateCoinInput = __decorate([
+    (0, type_graphql_1.InputType)()
+], CreateCoinInput);
+exports.CreateCoinInput = CreateCoinInput;
+let UpdateCoinInput = class UpdateCoinInput extends CreateCoinInput {
+};
 __decorate([
-    (0, type_graphql_1.Field)(() => type_graphql_1.ID, {
-        description: "Address"
-    }),
-    __metadata("design:type", String)
-], WalletOutput.prototype, "address", void 0);
-__decorate([
-    (0, type_graphql_1.Field)({
-        description: "cpf do individuo"
-    }),
-    __metadata("design:type", String)
-], WalletOutput.prototype, "cpf", void 0);
-__decorate([
-    (0, type_graphql_1.Field)({
-        description: "aniver do individuo"
-    }),
-    __metadata("design:type", String)
-], WalletOutput.prototype, "birthdate", void 0);
-__decorate([
-    (0, type_graphql_1.Field)(() => [CoinOutput_1.CoinOutput], {
-        description: "coins"
-    }),
-    __metadata("design:type", Array)
-], WalletOutput.prototype, "coins", void 0);
-WalletOutput = __decorate([
-    (0, type_graphql_1.ObjectType)({
-        description: "Lista carteiras"
-    })
-], WalletOutput);
-exports.WalletOutput = WalletOutput;
+    (0, type_graphql_1.Field)(() => type_graphql_1.ID),
+    __metadata("design:type", Number)
+], UpdateCoinInput.prototype, "id", void 0);
+UpdateCoinInput = __decorate([
+    (0, type_graphql_1.InputType)()
+], UpdateCoinInput);
+exports.UpdateCoinInput = UpdateCoinInput;

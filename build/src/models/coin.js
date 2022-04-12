@@ -1,29 +1,33 @@
 "use strict";
 const Sequelize = require('sequelize');
 module.exports = function (sequelize, DataTypes) {
-    const Wallet = sequelize.define('wallet', {
-        address: {
+    const Coin = sequelize.define('coin', {
+        id: {
             type: Sequelize.UUID,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true,
             defaultValue: Sequelize.UUIDV4
         },
-        name: {
+        coin: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        cpf: {
+        fullname: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        birthdate: {
-            type: Sequelize.STRING,
+        amont: {
+            type: Sequelize.DECIMAL,
             allowNull: false
+        },
+        walletAddress: {
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4
         }
-    }, { tableName: 'wallets' });
-    Wallet.associate = function (models) {
-        Wallet.hasMany(models.coin, { as: 'coins' });
+    }, { tableName: 'coins' });
+    Coin.associate = function (models) {
+        Coin.belongsTo(models.wallet, { foreignKey: 'walletAddress', as: 'wallets' });
     };
-    return Wallet;
+    return Coin;
 };

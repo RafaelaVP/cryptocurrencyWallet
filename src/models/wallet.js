@@ -23,6 +23,9 @@ module.exports = function(sequelize, DataTypes) {
  }
 
   }, {tableName: 'wallets'})
+  Wallet.associate = function(models) {
+    Wallet.hasMany(models.coin, {as: 'coins'})
+  };
 
   return Wallet; 
 }

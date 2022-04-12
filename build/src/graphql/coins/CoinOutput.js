@@ -9,44 +9,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WalletOutput = void 0;
+exports.CoinOutput = void 0;
 const type_graphql_1 = require("type-graphql");
-const CoinOutput_1 = require("../coins/CoinOutput");
-let WalletOutput = class WalletOutput {
+let CoinOutput = class CoinOutput {
 };
 __decorate([
     (0, type_graphql_1.Field)({
-        description: "nome do individuo"
+        description: "nome das moedas"
     }),
     __metadata("design:type", String)
-], WalletOutput.prototype, "name", void 0);
+], CoinOutput.prototype, "fullname", void 0);
 __decorate([
     (0, type_graphql_1.Field)(() => type_graphql_1.ID, {
-        description: "Address"
+        description: "id"
     }),
     __metadata("design:type", String)
-], WalletOutput.prototype, "address", void 0);
+], CoinOutput.prototype, "id", void 0);
 __decorate([
     (0, type_graphql_1.Field)({
-        description: "cpf do individuo"
+        description: "moeda"
     }),
     __metadata("design:type", String)
-], WalletOutput.prototype, "cpf", void 0);
+], CoinOutput.prototype, "coin", void 0);
 __decorate([
     (0, type_graphql_1.Field)({
-        description: "aniver do individuo"
+        description: ""
     }),
     __metadata("design:type", String)
-], WalletOutput.prototype, "birthdate", void 0);
+], CoinOutput.prototype, "amont", void 0);
 __decorate([
-    (0, type_graphql_1.Field)(() => [CoinOutput_1.CoinOutput], {
-        description: "coins"
+    (0, type_graphql_1.Field)({
+        description: ""
     }),
-    __metadata("design:type", Array)
-], WalletOutput.prototype, "coins", void 0);
-WalletOutput = __decorate([
+    __metadata("design:type", String)
+], CoinOutput.prototype, "walletAddress", void 0);
+CoinOutput = __decorate([
     (0, type_graphql_1.ObjectType)({
-        description: "Lista carteiras"
+        description: "Lista de moedas"
     })
-], WalletOutput);
-exports.WalletOutput = WalletOutput;
+], CoinOutput);
+exports.CoinOutput = CoinOutput;
