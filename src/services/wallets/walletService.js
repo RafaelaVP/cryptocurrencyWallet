@@ -18,7 +18,7 @@ const createWallet = async (data) => {
 }
 
 const getAllWallet = async (search) => {
-    search =  {include: { model: models.coin, as: 'coins' }}
+    search =  {include: { model: models.coin, as: 'coins' } }
     const result = await models.wallet.findAll(search)
     return result;
 }

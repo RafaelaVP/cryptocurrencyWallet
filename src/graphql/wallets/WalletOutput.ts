@@ -2,6 +2,7 @@ import { Field, ID, ObjectType } from "type-graphql";
 import { CoinOutput } from "../coins/CoinOutput";
 
 
+
 @ObjectType({
     description: "Lista carteiras"
 })
@@ -31,4 +32,5 @@ export class WalletOutput {
     })
     coins: []
 
+  
 }

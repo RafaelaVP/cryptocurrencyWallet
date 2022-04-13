@@ -6,11 +6,13 @@ import { Context } from "./graphql/common/Context";
 import { AResolver } from "./graphql/resolver";
 // import { formatError } from "./graphql/common/formatError";
 import { Coin } from "./graphql/coins/CoinResolver";
+import { TransactionResolver } from "./graphql/transactions/TransactionResolver";
+
 
 
 
 const schema = buildSchemaSync({
-    resolvers:[Wallet, AResolver,Coin ]
+    resolvers:[Wallet, AResolver,Coin, TransactionResolver ]
 }) 
 
 

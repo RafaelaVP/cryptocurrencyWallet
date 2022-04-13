@@ -9,50 +9,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CoinOutput = void 0;
+exports.TransactionOutput = void 0;
 const type_graphql_1 = require("type-graphql");
-const TransactionOutput_1 = require("../transactions/TransactionOutput");
-let CoinOutput = class CoinOutput {
+let TransactionOutput = class TransactionOutput {
 };
 __decorate([
     (0, type_graphql_1.Field)({
-        description: "nome das moedas"
+        description: "valor"
     }),
-    __metadata("design:type", String)
-], CoinOutput.prototype, "fullname", void 0);
+    __metadata("design:type", Number)
+], TransactionOutput.prototype, "value", void 0);
 __decorate([
     (0, type_graphql_1.Field)(() => type_graphql_1.ID, {
-        description: "id"
+        description: "Id"
     }),
     __metadata("design:type", String)
-], CoinOutput.prototype, "id", void 0);
+], TransactionOutput.prototype, "id", void 0);
 __decorate([
     (0, type_graphql_1.Field)({
-        description: "moeda"
+        description: "enviar para tal"
     }),
     __metadata("design:type", String)
-], CoinOutput.prototype, "coin", void 0);
+], TransactionOutput.prototype, "sendTo", void 0);
 __decorate([
     (0, type_graphql_1.Field)({
-        description: ""
+        description: "receber de"
     }),
     __metadata("design:type", String)
-], CoinOutput.prototype, "amont", void 0);
+], TransactionOutput.prototype, "receiveFrom", void 0);
 __decorate([
     (0, type_graphql_1.Field)({
-        description: ""
+        description: "cotação"
     }),
-    __metadata("design:type", String)
-], CoinOutput.prototype, "walletAddress", void 0);
+    __metadata("design:type", Number)
+], TransactionOutput.prototype, "currentCotation", void 0);
 __decorate([
-    (0, type_graphql_1.Field)(() => [TransactionOutput_1.TransactionOutput], {
-        description: "transactions"
+    (0, type_graphql_1.Field)(() => Date, {
+        description: "data"
     }),
-    __metadata("design:type", Array)
-], CoinOutput.prototype, "transactions", void 0);
-CoinOutput = __decorate([
+    __metadata("design:type", Date)
+], TransactionOutput.prototype, "datetime", void 0);
+TransactionOutput = __decorate([
     (0, type_graphql_1.ObjectType)({
-        description: "Lista de moedas"
+        description: "Listar"
     })
-], CoinOutput);
-exports.CoinOutput = CoinOutput;
+], TransactionOutput);
+exports.TransactionOutput = TransactionOutput;

@@ -28,6 +28,12 @@ module.exports = function (sequelize, DataTypes) {
     }, { tableName: 'coins' });
     Coin.associate = function (models) {
         Coin.belongsTo(models.wallet, { foreignKey: 'walletAddress', as: 'wallets' });
+        Coin.belongsToMany(models.transaction, {
+            through: 'coinTransaction',
+            foreignKey: 'coinId',
+            as: 'transactions',
+            constraint: true
+        });
     };
     return Coin;
 };

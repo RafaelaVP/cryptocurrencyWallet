@@ -5,6 +5,7 @@ const createCoin = async (data) => {
     return result;
 };
 const getAllCoin = async (search) => {
+    search = { include: { model: models.transaction, as: 'transactions' } };
     const result = await models.coin.findAll(search);
     return result;
 };
