@@ -1,6 +1,6 @@
 import { Arg, ID, Mutation, Query, Resolver } from "type-graphql";
-import { createWallet, deleteWallet, getAllWallet, getByAddressWallet, updateWallet } from "../../services/wallets/walletService";
-import { CreateWalletInput, UpdateWalletInput } from "./WalletInput";
+import { createWallet, deleteWallet, getAllWallet, getByAddressWallet, updateWallet, updateWalletCoins } from "../../services/wallets/walletService";
+import { CreateWalletInput, UpdateWalletCoinsInput, UpdateWalletInput } from "./WalletInput";
 import { WalletOutput } from "./WalletOutput";
 
 
@@ -30,6 +30,20 @@ export class Wallet {
            console.log(error)
        }
    }
+   @Mutation(()=> Boolean, {
+    description: "Update wallet"
+})
+async updateWalletCoins(
+    @Arg("data", () => [UpdateWalletCoinsInput], {description: "update da carteira"})
+    data:UpdateWalletCoinsInput[],
+){
+    try {
+        await updateWalletCoins(data)
+        return true
+    } catch (error) {
+        console.log(error)
+    }
+}
    @Mutation(()=> String, {
        description: "Delete Wallet"
    })

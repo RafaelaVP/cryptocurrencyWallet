@@ -1,6 +1,6 @@
 import {  MinLength } from "class-validator";
-import { Field, ID, InputType } from "type-graphql";
-import { CreateCoinInput } from "../coins/CoinInput";
+import { Field, Float, ID, InputType } from "type-graphql";
+import { UpdateCoinInput } from "../coins/CoinInput";
 
 
 @InputType()
@@ -18,8 +18,28 @@ export class CreateWalletInput {
     birthdate: string
 
 }
+
 @InputType()
 export class UpdateWalletInput extends CreateWalletInput {
     @Field(()=> ID, )
     address: number
+}
+
+@InputType()
+export class UpdateWalletCoinsInput {
+    @Field(() => String, {
+        description: ""
+    })
+    quoteTo: string
+
+    @Field(() => String, {
+        description:""
+    })
+    currentCoin: string
+
+    @Field (() => Float, {
+        description: ""
+    })
+    value: number
+
 }

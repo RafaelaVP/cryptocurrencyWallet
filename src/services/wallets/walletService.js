@@ -27,6 +27,12 @@ const updateWallet = async(data) => {
     await models.wallet.update(data, {where: {address:data.address}});
     return true;
 }
+const updateWalletCoins = async(data) => {
+    data =  {include: { model: models.coin, as: 'coins' } }
+    await models.wallet.update(data, {where: {address:data.address}});
+    return true;
+}
+
 const deleteWallet = async (address) => {
     return await models.wallet.destroy({where: {address}})
 }
@@ -35,4 +41,4 @@ const getByAddressWallet = async (address) => {
     return result
 }
 
-module.exports = {createWallet, getAllWallet, updateWallet, deleteWallet, getByAddressWallet}
+module.exports = {createWallet, getAllWallet, updateWallet, deleteWallet, getByAddressWallet, updateWalletCoins}
