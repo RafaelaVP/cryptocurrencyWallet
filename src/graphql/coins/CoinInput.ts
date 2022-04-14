@@ -1,4 +1,4 @@
-import { Field, ID, InputType } from "type-graphql";
+import { Field, Float, ID, InputType } from "type-graphql";
 
 
 @InputType()
@@ -9,7 +9,7 @@ export class CreateCoinInput {
     @Field()
     coin: String
 
-    @Field (() => Number, {
+    @Field (() => Float, {
         description: "kodi"
     })
     amont: number
