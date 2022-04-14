@@ -31,6 +31,15 @@ let Wallet = class Wallet {
             console.log(error);
         }
     }
+    async updateWalletCoins(data) {
+        try {
+            await (0, walletService_1.updateWalletCoins)(data);
+            return true;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     async deleteWallet(address) {
         try {
             return await (0, walletService_1.deleteWallet)(address);
@@ -76,6 +85,15 @@ __decorate([
     __metadata("design:paramtypes", [WalletInput_1.UpdateWalletInput]),
     __metadata("design:returntype", Promise)
 ], Wallet.prototype, "updateWallet", null);
+__decorate([
+    (0, type_graphql_1.Mutation)(() => Boolean, {
+        description: "Update wallet"
+    }),
+    __param(0, (0, type_graphql_1.Arg)("data", () => [WalletInput_1.UpdateWalletCoinsInput], { description: "update da carteira" })),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Array]),
+    __metadata("design:returntype", Promise)
+], Wallet.prototype, "updateWalletCoins", null);
 __decorate([
     (0, type_graphql_1.Mutation)(() => String, {
         description: "Delete Wallet"

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateWalletInput = exports.CreateWalletInput = void 0;
+exports.UpdateWalletCoinsInput = exports.UpdateWalletInput = exports.CreateWalletInput = void 0;
 const class_validator_1 = require("class-validator");
 const type_graphql_1 = require("type-graphql");
 let CreateWalletInput = class CreateWalletInput {
@@ -43,3 +43,27 @@ UpdateWalletInput = __decorate([
     (0, type_graphql_1.InputType)()
 ], UpdateWalletInput);
 exports.UpdateWalletInput = UpdateWalletInput;
+let UpdateWalletCoinsInput = class UpdateWalletCoinsInput {
+};
+__decorate([
+    (0, type_graphql_1.Field)(() => String, {
+        description: ""
+    }),
+    __metadata("design:type", String)
+], UpdateWalletCoinsInput.prototype, "quoteTo", void 0);
+__decorate([
+    (0, type_graphql_1.Field)(() => String, {
+        description: ""
+    }),
+    __metadata("design:type", String)
+], UpdateWalletCoinsInput.prototype, "currentCoin", void 0);
+__decorate([
+    (0, type_graphql_1.Field)(() => type_graphql_1.Float, {
+        description: ""
+    }),
+    __metadata("design:type", Number)
+], UpdateWalletCoinsInput.prototype, "value", void 0);
+UpdateWalletCoinsInput = __decorate([
+    (0, type_graphql_1.InputType)()
+], UpdateWalletCoinsInput);
+exports.UpdateWalletCoinsInput = UpdateWalletCoinsInput;

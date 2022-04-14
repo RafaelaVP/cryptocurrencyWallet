@@ -22,7 +22,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateCoinInput.prototype, "coin", void 0);
 __decorate([
-    (0, type_graphql_1.Field)(() => Number, {
+    (0, type_graphql_1.Field)(() => type_graphql_1.Float, {
         description: "kodi"
     }),
     __metadata("design:type", Number)

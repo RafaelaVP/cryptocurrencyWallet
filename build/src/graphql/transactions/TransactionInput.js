@@ -14,7 +14,9 @@ const type_graphql_1 = require("type-graphql");
 let CreateTransactionInput = class CreateTransactionInput {
 };
 __decorate([
-    (0, type_graphql_1.Field)(),
+    (0, type_graphql_1.Field)(() => type_graphql_1.Float, {
+        description: ""
+    }),
     __metadata("design:type", Number)
 ], CreateTransactionInput.prototype, "value", void 0);
 __decorate([
