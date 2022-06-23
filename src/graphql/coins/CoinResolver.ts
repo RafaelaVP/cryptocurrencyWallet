@@ -50,6 +50,7 @@ export class Coin {
         console.log(error)
        }
    }
+   
 
    @Query(()=> [CoinOutput], {
        description: "todas as carteiras"

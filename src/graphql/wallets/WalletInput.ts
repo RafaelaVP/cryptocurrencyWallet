@@ -3,6 +3,8 @@ import { Field, Float, ID, InputType } from "type-graphql";
 import { UpdateCoinInput } from "../coins/CoinInput";
 
 
+
+
 @InputType()
 export class CreateWalletInput {
     @Field()
@@ -22,7 +24,7 @@ export class CreateWalletInput {
 @InputType()
 export class UpdateWalletInput extends CreateWalletInput {
     @Field(()=> ID, )
-    address: number
+    address: string
 }
 
 @InputType()
@@ -41,5 +43,9 @@ export class UpdateWalletCoinsInput {
         description: ""
     })
     value: number
+
+    @Field(()=> ID, )
+    address: string
+ 
 
 }

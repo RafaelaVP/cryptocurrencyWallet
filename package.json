@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev src/app.js",
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand",
-    "start": "cross-env NODE_ENV=test sequelize-cli db:migrate"
+    "start": "cross-env NODE_ENV=test sequelize-cli db:migrate",
+    "compile": "tsc --watch"
   },
   "author": "Rafaela Valerio",
   "license": "ISC",

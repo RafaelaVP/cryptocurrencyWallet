@@ -7,7 +7,9 @@ server.applyMiddleware({
     cors: true
 });
 if (require.main === module) {
-    app.listen(4000, () => { console.log("Rodando"); });
+    app.listen(4000, () => {
+        console.log("Server running");
+    });
 }
 module.exports = {
     app

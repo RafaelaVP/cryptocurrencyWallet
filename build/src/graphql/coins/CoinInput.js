@@ -23,13 +23,13 @@ __decorate([
 ], CreateCoinInput.prototype, "coin", void 0);
 __decorate([
     (0, type_graphql_1.Field)(() => type_graphql_1.Float, {
-        description: "kodi"
+        description: ""
     }),
     __metadata("design:type", Number)
 ], CreateCoinInput.prototype, "amont", void 0);
 __decorate([
     (0, type_graphql_1.Field)(() => String, {
-        description: "kodi"
+        description: ""
     }),
     __metadata("design:type", String)
 ], CreateCoinInput.prototype, "walletAddress", void 0);
@@ -41,7 +41,7 @@ let UpdateCoinInput = class UpdateCoinInput extends CreateCoinInput {
 };
 __decorate([
     (0, type_graphql_1.Field)(() => type_graphql_1.ID),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], UpdateCoinInput.prototype, "id", void 0);
 UpdateCoinInput = __decorate([
     (0, type_graphql_1.InputType)()

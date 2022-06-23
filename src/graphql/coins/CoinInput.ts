@@ -10,17 +10,18 @@ export class CreateCoinInput {
     coin: String
 
     @Field (() => Float, {
-        description: "kodi"
+        description: ""
     })
     amont: number
 
     @Field (() => String, {
-        description: "kodi"
+        description: ""
     })
     walletAddress: String
 }
 @InputType()
 export class UpdateCoinInput extends CreateCoinInput {
     @Field(()=> ID, )
-    id: number
+    id: string
 }
+

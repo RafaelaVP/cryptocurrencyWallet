@@ -13,15 +13,16 @@ const getAllCoin = async (search) => {
 }
 
 const updateCoin = async(data) => {
-    await models.Coin.update(data, {where: {id:data.id}});
+    await models.coin.update(data, {where: {id:data.id}});
     return true;
 }
 const deleteCoin = async (id) => {
-    return await models.Coin.destroy({where: {id}})
+    return await models.coin.destroy({where: {id}})
 }
 const getByIdCoin = async (id) => {
-    const result = await models.Coin.findOne({where: {id}})
+    const result = await models.coin.findOne({where: {id}})
     return result
 }
+
 
 module.exports = {createCoin, getAllCoin, updateCoin, deleteCoin, getByIdCoin}

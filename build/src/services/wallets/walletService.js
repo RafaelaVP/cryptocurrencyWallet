@@ -3,6 +3,7 @@ const models = require('../../models');
 const validCpf = require('../../utils/cpfValid');
 const validAge = require('../../utils/age');
 const Errors = require('../../errors/Errors');
+const { currentCotation } = require('../currentCotation');
 const errors = Errors();
 const createWallet = async (data) => {
     const isCPFinvalid = validCpf.valid(data.cpf);
@@ -27,7 +28,15 @@ const updateWallet = async (data) => {
 };
 const updateWalletCoins = async (data) => {
     data = { include: { model: models.coin, as: 'coins' } };
-    await models.wallet.update(data, { where: { address: data.address } });
+    const test = data;
+    console.log(test);
+    const { walletAddress } = data.params;
+    const { quoteTo, currentCoin, value } = data.body;
+    const userBalance = await models.coin.findOne({ where: { walletAddress, coin: currentCoin }, attributes: ["amont"] });
+    console.log(userBalance);
+    if (!userBalance || userBalance.amont < value) {
+        throw new Error(`Saldo em ${currentCoin} insuficiente`);
+    }
     return true;
 };
 const deleteWallet = async (address) => {

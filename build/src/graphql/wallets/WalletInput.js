@@ -37,7 +37,7 @@ let UpdateWalletInput = class UpdateWalletInput extends CreateWalletInput {
 };
 __decorate([
     (0, type_graphql_1.Field)(() => type_graphql_1.ID),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], UpdateWalletInput.prototype, "address", void 0);
 UpdateWalletInput = __decorate([
     (0, type_graphql_1.InputType)()
@@ -63,6 +63,10 @@ __decorate([
     }),
     __metadata("design:type", Number)
 ], UpdateWalletCoinsInput.prototype, "value", void 0);
+__decorate([
+    (0, type_graphql_1.Field)(() => type_graphql_1.ID),
+    __metadata("design:type", String)
+], UpdateWalletCoinsInput.prototype, "address", void 0);
 UpdateWalletCoinsInput = __decorate([
     (0, type_graphql_1.InputType)()
 ], UpdateWalletCoinsInput);
